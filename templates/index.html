@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ og_title }}</title>
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ og_description }}">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: black; /* Set background color to black */
+    color: white; /* Set text color to white */
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: #ff0000; /* Red color */
+    font-size: 24px; /* Larger font size */
+    text-align: center; /* Center align the h1 element */
+  }
+
+  form {
+    background-color: #333; /* Dark gray background color for form */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto; /* Center the form horizontally */
+    text-align: left; /* Align form elements to the left */
+  }
+
+  label {
+    font-weight: bold;
+    color: white; /* Set label text color to white */
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #555; /* Dark gray background color for input fields */
+    color: white; /* Set text color to white */
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<h1>Enter Target Information</h1>
+
+<form action="{{ url_for('generate_txt') }}" method="post">
+  <label for="reason">Reason:</label>
+  <input type="text" id="reason" name="reason">
+
+  <label for="fullName">Full Name:</label>
+  <input type="text" id="fullName" name="fullName">
+
+  <label for="alias">Alias:</label>
+  <input type="text" id="alias" name="alias">
+
+  <label for="dob">Date Of Birth (MM-DD-YYYY):</label>
+  <input type="text" id="dob" name="dob" pattern="\d{2}-\d{2}-\d{4}" placeholder="MM-DD-YYYY" title="Please enter date in MM-DD-YYYY format">
+
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age">
+
+  <label for="phoneNumber">Phone Number:</label>
+  <input type="text" id="phoneNumber" name="phoneNumber">
+
+  <label for="address">Address:</label>
+  <input type="text" id="address" name="address">
+
+  <label for="state">State:</label>
+  <input type="text" id="state" name="state">
+
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city">
+
+  <label for="zip">Zip:</label>
+  <input type="text" id="zip" name="zip">
+
+  <label for="country">Country:</label>
+  <input type="text" id="country" name="country">
+
+  <label for="otherInfo">Other Info:</label>
+  <textarea id="otherInfo" name="otherInfo"></textarea>
+
+  <input type="submit" value="Done">
+</form>
+
+</body>
+</html>

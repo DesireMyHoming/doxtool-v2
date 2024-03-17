@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download File</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  .container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .download-link {
+    display: block;
+    color: #fff;
+    background-color: #4CAF50;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+
+  .download-link:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>File Generated Successfully</h2>
+  <p>Click the link below to download the file:</p>
+  <a class="download-link" href="{{ url_for('static', filename='txts/' + file_name) }}" download>{{ file_name }}</a>
+</div>
+
+</body>
+</html>
